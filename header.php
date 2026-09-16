@@ -15,7 +15,7 @@
                     <button class="action action--nav-menu">|||</button>
                 </div>
                 <div class="nav__logo-container">
-                    <a href=""><img class="nav__logo" src="https://themagnoliapost-com.local/wp-content/uploads/2026/09/full-logo.svg" alt="" class="logo__img" /></a>
+                    <a href="/"><img class="nav__logo" src="https://themagnoliapost-com.local/wp-content/uploads/2026/09/full-logo.svg" alt="" class="logo__img" /></a>
                 </div>
                 <ul class="menu menu--nav">
                     <li>
