@@ -12,7 +12,7 @@
         <div class="container container--border-bottom container--primary-nav">
             <nav class="nav nav--primary">
                 <div class="nav__section nav__section--90deg">
-                    <button class="action action--nav-menu">|||</button>
+                    <button id="menu-toggle" class="action action--nav-menu">|||</button>
                 </div>
                 <div class="nav__logo-container">
                     <a href="/"><img class="nav__logo" src="https://themagnoliapost-com.local/wp-content/uploads/2026/09/full-logo.svg" alt="" class="logo__img" /></a>
@@ -67,4 +67,5 @@
             </nav>
         </div>
     </header>
+    <?php get_template_part( 'includes/section', 'site-menu' ) ?>
     

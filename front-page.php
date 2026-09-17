@@ -1,20 +1,33 @@
 <?php get_header(); ?>
 
-<main class="page-section">
-    <div class="content-container">
-        <?php if ( have_posts() ): while(have_posts()): the_post(); ?>
-            <a href="<?php echo esc_attr( get_the_permalink() ); ?>">
-                <div class="card card--row">
-                    <div class="card__img-container">
-                        <img class="card__img" src="<?php echo esc_attr( the_post_thumbnail_url() ); ?>" alt="">
-                    </div>
-                    <div class="card__info">
-                        <span class="card__title"><?php the_title(); ?></span>
-                    </div>
-                </div>
-            </a>
-        <?php endwhile; else: endif; ?>
+<main class="page">
+    <div class="page-section page-section--grid-col-3">
+        <div class="col-span-2">
+            <?php get_template_part( 'includes/widgets/post', 'row-large' ); ?>
+        </div>
+        <div class="content-container">
+
+        </div>
     </div>
+    <div class="page-section page-section page-section--grid-col-3">
+        <div class="content-container col-span-2">
+            <?php get_template_part(
+                'includes/widgets/posts',
+                'grid',
+                array(
+                    'title' => '',
+                    'post_type' => 'post',
+                    'post_count' => 8,
+                    'exclude_main_post' => true
+                )
+                );
+            ?>
+        </div>
+        <div class="content-container">
+            
+        </div>
+    </div>
+    
 </main>
 
 <?php get_footer(); ?>

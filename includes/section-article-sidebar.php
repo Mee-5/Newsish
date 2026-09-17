@@ -1,8 +1,8 @@
 <div class="content-container article-sidebar">
     <div class="article-sidebar__body">
         <?php get_template_part( 
-            'includes/cards/post',
-            'horizontal-small',
+            'includes/widgets/posts',
+            'list',
             array(
                 'title' => 'More News',
                 'post_type' => 'post',

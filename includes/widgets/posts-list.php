@@ -12,15 +12,6 @@
 <div class="card-container">
     <h1 class="card-container__title"><?php echo esc_html( $args[ 'title' ]); ?></h1>
     <?php while ( $query->have_posts() ): $query->the_post(); ?>
-        <a href="<?php echo esc_attr( get_the_permalink() ); ?>">
-            <div class="card card--row">
-                <div class="card__img-container">
-                    <img class="card__img" src="<?php echo esc_attr( the_post_thumbnail_url() ); ?>" alt="">
-                </div>
-                <div class="card__info">
-                    <span class="card__title"><?php the_title(); ?></span>
-                </div>
-            </div>
-        </a>
+        <?php get_template_part( 'includes/cards/post', 'row-small' ) ?>
     <?php endwhile; wp_reset_postdata(); ?>
 </div>

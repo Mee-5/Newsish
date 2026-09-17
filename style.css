@@ -17,8 +17,9 @@ Version: 1.0.0
 :root {
     --primary-border-color: #c4c4c4;
     --accent-color: #868570;
-    --gap: 10px;
+    --gap: 15px;
     --container-border-radius: 8px;
+    --img-border-radius: 8px;
     /* Default Mobile Sizes (Compact & Readable) */
     --text-xs: 0.75rem;    /* Timestamps, categories, bylines */
     --text-sm: 0.875rem;   /* Captions, sidebar widget items */
@@ -45,7 +46,7 @@ Version: 1.0.0
 }
 
 html {
-    background-color: #f4f5f6;
+    background-color: #fff;
 }
 
 body {
@@ -72,8 +73,7 @@ main {
 }
 
 main img {
-    --border-radius: 8px;
-    border-radius: var(--border-radius);
+    border-radius: var(--img-border-radius);
     border: solid 1px var(--primary-border-color);
 }
 
@@ -85,23 +85,6 @@ main img {
 }
 
 /* Containers */
-
-.page-section {
-    width: 100%;
-    height: 100%;
-    max-width: 1300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-}
-
-.page-section--single{
-    display: grid;
-    grid-template-columns: 750px 400px;
-    grid-template-rows: 1fr;
-    gap: var(--gap);
-}
 
 .content-container {
     width: 100%;
@@ -161,7 +144,7 @@ main img {
 .article__img {
     width: 100%;
     object-fit: cover;
-    border-radius: var(--border-radius);
+    border-radius: var(--img-border-radius);
     border: solid 1px var(--primary-border-color);
 }
 
@@ -185,6 +168,13 @@ main img {
     gap: var(--gap);
 }
 
+.card-container--grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: var(--gap);
+}
+
 .card-container__title {
     font-size: var(--text-md);
     font-weight: var(--weight-bold);
@@ -193,35 +183,77 @@ main img {
 .card {
     display: flex;
     flex-direction: column;
-    gap: 15px;
 }
 
 .card--row {
     flex-direction: row;
 }
 
+.card--row-large {
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: var(--container-border-radius);
+    overflow: hidden;
+}
+
 .card__img-container {
+    width: 100%;
     aspect-ratio: 16/9;
     flex-shrink: 0;
     overflow: hidden;
+    border-radius: var(--img-border-radius);
+}
+
+.card__img-container--row {
     width: 140px;
+}
+
+.card__img-container--large {
+    width: 450px;
+    border-radius: 0;
 }
 
 .card__img {
     display: block;
     object-fit: cover;
     width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: 0;
 }
 
 .card__info {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    padding: 5px;
+    padding-top: 0;
+}
+
+.card__info--large {
+    padding: 15px;
 }
 
 .card__title {
     font-weight: var(--weight-bold);
     font-size: var(--text-sm);
+}
+
+.card__title--large {
+    font-weight: var(--weight-bold);
+    font-size: var(--text-lg);
+}
+
+.card__category {
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--accent-color);
+}
+
+.card__category--large {
+    font-weight: 600;
+    font-size: var(--text-md);
+    color: var(--accent-color);
 }
 
 /* Nav */
@@ -240,12 +272,14 @@ main img {
 .nav--primary {
     min-height: 60px;
     padding: 0 15px;
+    z-index: 50;
 }
 
 .nav--subnav {
     justify-content: center;
     padding: 5px 10px 10px 10px;
     border-radius: 4px;
+    z-index: 48;
 }
 
 .nav__logo-container {
@@ -349,6 +383,61 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
     display: flex;
 }
 
+/* Layout */
+
+.page {
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    gap: var(--gap);
+}
+
+.page-section {
+    width: 100%;
+    gap: var(--gap);
+}
+
+.page-section--grid-col-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.page-section--single{
+    display: grid;
+    grid-template-columns: 750px 400px;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    gap: var(--gap);
+}
+
+.col-span-2 {
+    grid-column: span 2;
+}
+
+/* Site menu */
+
+.site-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 61px);
+    background-color: #fff;
+    left: -10000px;
+    top: 61px;
+    z-index: 49;
+    pointer-events: none;
+    position: absolute;
+    left: -10000px;
+    transition: left 0.3s ease-in-out;
+}
+
+.site-menu--active {
+    left: 0;
+}
 
 @media screen and (max-width: 1024px) {
     .page-section--single{
