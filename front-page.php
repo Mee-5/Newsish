@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="page">
-    <div class="page-section page-section--grid-col-3">
+    <div class="page-section grid grid--tb-col-3 grid-tb-col-2 grid--mb-col-1">
         <div class="col-span-2">
             <?php get_template_part( 'includes/widgets/post', 'row-large' ); ?>
         </div>
