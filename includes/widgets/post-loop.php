@@ -9,8 +9,6 @@
     $query = new WP_Query( $query_args );
 ?>
 
-<div class="card-container grid grid--dt-col-4 grid--tb-col-2 grid--mb-col-1">
-    <?php while ( $query->have_posts() ): $query->the_post(); ?>
-        <?php get_template_part( 'includes/cards/post', 'col-category' ) ?>
-    <?php endwhile; wp_reset_postdata(); ?>
-</div>
+<?php while ( $query->have_posts() ): $query->the_post(); ?>
+    <?php get_template_part( 'includes/cards/post', $args[ 'template' ] ); ?>
+<?php endwhile; wp_reset_postdata(); ?>

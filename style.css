@@ -18,6 +18,8 @@ Version: 1.0.0
     --primary-border-color: #c4c4c4;
     --accent-color: #868570;
     --gap: 15px;
+    --gap-row: 20px;
+    --gap-col: 20px;
     --container-border-radius: 8px;
     --img-border-radius: 8px;
     --max-section-width: 1300px;
@@ -436,11 +438,13 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
 
 .flex {
     display: flex;
+    gap: var(--gap-col);
 }
 
 .grid {
     display: grid;
     grid-auto-rows: auto;
+    gap: var(--gap-row);
 }
 
 /* Desktop Layout */
@@ -556,12 +560,7 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
     }
 }
 
-
 @media screen and (max-width: 1024px) {
-
-    .page-section--single{
-    grid-template-columns: 1fr;
-    }
 
     .menu--nav {
         display: none;
@@ -569,11 +568,6 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
 
     .nav__logo-container {
         width: 250px;
-    }
-
-    .page-section--grid-col-3 {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
     }
 }
 
