@@ -191,7 +191,7 @@ main img {
 
 .card--row-large {
     flex-direction: row;
-    background-color: #fff;
+    background-color: #f4f5f6;
     border-radius: var(--container-border-radius);
     overflow: hidden;
 }
@@ -210,6 +210,7 @@ main img {
 
 .card__img-container--large {
     width: 450px;
+    flex-basis: 450px;
     border-radius: 0;
 }
 
@@ -236,7 +237,7 @@ main img {
 
 .card__title {
     font-weight: var(--weight-bold);
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
 }
 
 .card__title--large {
@@ -246,7 +247,7 @@ main img {
 
 .card__category {
     font-weight: 600;
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     color: var(--accent-color);
 }
 
@@ -450,5 +451,10 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
 
     .nav__logo-container {
         width: 250px;
+    }
+
+    .page-section--grid-col-3 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 }
