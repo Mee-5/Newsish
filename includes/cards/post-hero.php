@@ -9,7 +9,7 @@
                 }
             } 
         ?>
-        <a class="card__title--large" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        <a class="card__title card__title--large" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     </div>
     <a href="<?php the_permalink(); ?>">
         <div class="card__img-container card__img-container--large">
