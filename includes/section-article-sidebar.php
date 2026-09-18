@@ -3,7 +3,7 @@
         <span class="card-container__title ">More News</span>
         <div class="flex flex--dt-col">
             <?php get_template_part(
-                'includes/widgets/post',
+                'includes/cards/post',
                 'loop',
                 array(
                     'post_type' => 'post',

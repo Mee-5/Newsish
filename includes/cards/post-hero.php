@@ -1,4 +1,4 @@
-<div class="card card--row-large flex flex--dt-row flex--mb-col">
+<div class="card card--hero flex flex--dt-row flex--mb-col">
     <div class="card__info card__info--large">
         <?php
             $terms = get_the_category();

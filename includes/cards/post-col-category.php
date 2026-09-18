@@ -1,8 +1,6 @@
-<div class="card">
-    <a href="<?php echo esc_attr( get_the_permalink() ); ?>">
-        <div class="card__img-container">
-            <img class="card__img" src="<?php echo esc_attr( the_post_thumbnail_url() ); ?>" alt="">
-        </div>
+<div class="card flex flex--dt-col flex--mb-row">
+    <a class="card__img-container card__img-container--mobile" href="<?php echo esc_attr( get_the_permalink() ); ?>">
+        <img class="card__img" src="<?php echo esc_attr( the_post_thumbnail_url() ); ?>" alt="">
     </a>
     <div class="card__info">
         <?php

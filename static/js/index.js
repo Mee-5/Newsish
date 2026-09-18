@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     menuToggle.addEventListener('click', (e) => {
         menu.classList.toggle('site-menu--active');
+        document.body.classList.toggle('no-scroll');
     });
 })
 
