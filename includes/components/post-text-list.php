@@ -4,7 +4,7 @@
     </div>
     <div class="component__body">
         <ul class="component__list flex flex--dt-col">
-            <?php newsish_post_loop( 'row-title', $args[ 'query' ], post_count: 8) ?>
+            <?php newsish_post_loop( 'title', $args[ 'query' ], post_count: 8) ?>
         </ul>
     </div>
 </div>

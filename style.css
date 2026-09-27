@@ -255,7 +255,7 @@ main img {
 }
 
 .card__img:hover, .card:has( .card__title:hover ) .card__img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .card__info {

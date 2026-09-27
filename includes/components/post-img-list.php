@@ -9,7 +9,7 @@
                     'post_type' => 'post',
                     'posts_per_page' => 8,
                     'exclude_main_post' => true,
-                    'template' => 'row-horizontal'
+                    'template' => 'default-row'
                 )
                 );
             ?>
