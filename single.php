@@ -6,7 +6,7 @@
             <?php get_template_part( 'includes/section', 'article' ); ?>
         </div>
         <div class="page-section">
-            <?php get_template_part( 'includes/section', 'article-sidebar'); ?>
+            <?php get_template_part( 'includes/components/post', 'img-list'); ?>
         </div>
     </div>
 </main>

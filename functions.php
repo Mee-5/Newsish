@@ -8,8 +8,22 @@ function newsish_enqueue_styles() {
         'newsish_main_css',
         get_stylesheet_uri(),
         array(),
-        wp_get_theme()->get("Version")
-        ,'all'
+        wp_get_theme()->get( 'Version' ),
+        'all'
+    );
+}
+
+function newsish_enqueue_admin_styles() {
+    if ( !current_user_can('manage_options') ) {
+        return;
+    }
+
+    wp_enqueue_style(
+        'newsish_admin_css',
+        get_theme_file_uri( 'static/css/admin.css' ),
+        array(),
+        wp_get_theme()->get( 'Version' ),
+        'all'
     );
 }
 
@@ -23,5 +37,6 @@ function newsish_enqueue_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'newsish_enqueue_styles' );
-add_action('wp_enqueue_scripts', 'newsish_enqueue_scripts');
+add_action( 'wp_enqueue_scripts', 'newsish_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'newsish_enqueue_admin_styles' );
 add_theme_support( 'menus' );

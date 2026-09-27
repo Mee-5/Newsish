@@ -53,7 +53,7 @@ Version: 1.0.0
 }
 
 html {
-    background-color: #f4f5f6;
+    background-color: #fff;
 }
 
 body {
@@ -99,13 +99,23 @@ main img {
     overflow: hidden;
 }
 
+.flex {
+    display: flex;
+    gap: var(--gap-col);
+}
+
+.grid {
+    display: grid;
+    grid-auto-rows: auto;
+    gap: var(--gap-row);
+}
+
 /* Containers */
 
 .content-container {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 10px;
     background-color: #fff;
     border-radius: var(--container-border-radius);
     gap: var(--gap);
@@ -176,32 +186,37 @@ main img {
 
 /* Cards */
 
-.card-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap);
-}
-
-.card-container__title {
-    font-size: var(--text-md);
-    font-weight: var(--weight-bold);
-}
-
 .card {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
-.card--row {
+.card--title-only {
+    width: 100%;
+    list-style: disc;
+    list-style-position: inside;
+}
+
+.card--title-only::marker {
+    color: var(--accent-color);
+}
+
+.card--horizontal {
     flex-direction: row;
 }
 
 .card--hero {
     flex-direction: row;
-    background-color: #fff;
+    background-color: #f4f5f6;
     border-radius: var(--container-border-radius);
     overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+    .card--hero {
+        flex-direction: column-reverse;
+    }
 }
 
 .card__img-container {
@@ -212,11 +227,19 @@ main img {
     border-radius: var(--img-border-radius);
 }
 
-.card__img-container--mobile {
+/* Static image sizing */
+.card__img-container--sm {
     width: var(--img-sm);
 }
 
-.card__img-container--large {
+/* Responsive image sizing*/
+@media screen and (max-width: 600px) {
+    .card__img-container--mobile {
+        width: var(--img-sm);
+    }
+}
+
+.card__img-container--hero {
     flex-basis: 60%;
     border-radius: 0;
 }
@@ -244,7 +267,7 @@ main img {
     padding-top: 0;
 }
 
-.card__info--large {
+.card__info--hero {
     padding: 15px;
 }
 
@@ -253,7 +276,7 @@ main img {
     font-size: var(--text-base);
 }
 
-.card__title--large {
+.card__title--hero {
     font-weight: var(--weight-bold);
     font-size: var(--text-lg);
 }
@@ -269,6 +292,48 @@ main img {
     font-weight: 600;
     font-size: var(--text-md);
     color: var(--accent-color);
+}
+
+/* Components */
+.component {
+    overflow: hidden;
+    gap: 0;
+}
+
+.component--text-list {
+    background-color: #f4f5f6;
+    border-radius: var(--container-border-radius);
+}
+
+.component__header {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--accent-color);
+}
+
+.component__title {
+    font-weight: var(--weight-bold);
+    font-size: var(--text-base);
+    color: #fff;
+}
+
+.component__body {
+    padding: 10px;
+}
+
+.component__list li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.component__list li::before {
+  content: "";
+  width: 6px;             /* Size of the dot */
+  height: 6px;
+  background-color: #000;/* Dot color */
+  border-radius: 50%;     /* Makes it a perfect circle */
+  flex-shrink: 0;         /* Prevents the dot from squishing */
 }
 
 /* Nav */
@@ -416,6 +481,11 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
     gap: var(--gap);
 }
 
+.page-section__title {
+    font-size: var(--text-md);
+    font-weight: var(--weight-bold);
+}
+
 .page-section--grid-col-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -452,17 +522,6 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
 
 .site-menu--active {
     left: 0;
-}
-
-.flex {
-    display: flex;
-    gap: var(--gap-col);
-}
-
-.grid {
-    display: grid;
-    grid-auto-rows: auto;
-    gap: var(--gap-row);
 }
 
 /* Desktop Layout */
@@ -546,6 +605,11 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
         align-items: center;
     }
 
+    .flex--mb-col-rev {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
     .flex--mb-row {
         flex-direction: row;
         justify-content: center;
@@ -598,7 +662,8 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
 }
 
 @media screen and (max-width: 600px) {
-    .card__img-container--row {
-        width: var(--img-sm);
+
+    .card__img-container--reponsive {
+        width: var(--img-sm); 
     }
 }

@@ -1,4 +1,4 @@
-<div class="content-container article">
+<article class="content-container article">
     <div class="article__header">
         <h1 class="article__title"><?php the_title(); ?></h1>
         <div class="article__info">
@@ -17,4 +17,4 @@
     <div class="article__footer">
 
     </div>
-</div>
+</article>

@@ -1,5 +1,5 @@
-<div class="card card--hero flex flex--dt-row flex--mb-col">
-    <div class="card__info card__info--large">
+<div class="card card--hero flex flex--dt-row flex--mb-col-rev">
+    <div class="card__info card__info--hero">
         <?php
             $terms = get_the_category();
             foreach( $terms as $term) {
@@ -9,10 +9,10 @@
                 }
             } 
         ?>
-        <a class="card__title card__title--large" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        <a class="card__title card__title--hero" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     </div>
     <a href="<?php the_permalink(); ?>">
-        <div class="card__img-container card__img-container--large">
+        <div class="card__img-container card__img-container--hero">
             <img class="card__img" src="<?php echo esc_attr( the_post_thumbnail_url() ); ?>" alt="">
         </div>
     </a>
