@@ -1,3 +1,7 @@
-.header {
+/* .header {
     top: 32px;
+} */
+
+#wpadminbar {
+    display: none;
 }

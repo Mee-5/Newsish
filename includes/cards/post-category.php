@@ -1,4 +1,4 @@
-<div class="card flex flex--dt-col flex--mb-row">
+<div class="card card--category">
     <a class="card__img-container card__img-container--mobile" href="<?php echo esc_attr( get_the_permalink() ); ?>">
         <img class="card__img" src="<?php echo esc_attr( the_post_thumbnail_url() ); ?>" alt="">
     </a>

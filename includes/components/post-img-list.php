@@ -1,7 +1,9 @@
 <div class="content-container article-sidebar">
-    <div class="article-sidebar__body">
-        <span class="page-section__title ">More News</span>
-        <div class="flex flex--dt-col">
+    <div class="component">
+        <div class="component__header">
+            <span class="component__title">More News</span>
+        </div>
+        <div class="component__body">
             <?php get_template_part(
                 'includes/cards/post',
                 'loop',

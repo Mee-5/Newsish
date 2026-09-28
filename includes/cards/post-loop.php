@@ -4,7 +4,7 @@ $default_args = array(
     'posts_per_page' => 4,
     'category_name' => 'news',
     'post__not_in' => array(),
-    'template' => 'default-col',
+    'template' => 'default',
     'custom_query' => true
 );
 

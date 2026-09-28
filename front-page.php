@@ -23,18 +23,18 @@ $entertainment_query = new WP_Query( $entertainment_query_args );
 ?>
 
 <main class="page">
-    <div class="page-section grid grid--dt-col-3 grid--tb-col-2 grid--mb-col-1">
-        <div class="col-span-2">
+    <div class="page-section grid grid--mb-col-1 grid--tb-col-2 grid--dt-col-3">
+        <div class="content-container">
             <?php newsish_post_loop( 'hero', $news_query, post_count: 1 ); ?>
         </div>
         <div class="content-container">
-            <?php newsish_post_loop( 'default-col', $news_query, post_count: 1 ) ?>
+            <?php newsish_post_loop( 'default', $news_query, post_count: 1 ) ?>
         </div>
     </div>
-    <div class="page-section grid grid--dt-col-3 grid--tb-col-2 grid--mb-col-1">
-        <div class="col-span-2">
+    <div class="page-section grid grid--mb-col-1 grid--tb-col-2 grid--dt-col-3">
+        <div>
             <div class=" grid grid--dt-col-4 grid--tb-col-2 grid--mb-col-1">
-                <?php newsish_post_loop( 'category-col', $news_query, post_count: 8 ); ?>
+                <?php newsish_post_loop( 'category', $news_query, post_count: 8 ); ?>
             </div>
         </div>
         <?php get_template_part('includes/components/post', 'text-list', array( 'title' => 'More News', 'query' => $news_query)) ?>

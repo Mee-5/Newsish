@@ -1,7 +1,40 @@
 <div id="site-menu" class="site-menu">
-    <div class="page">
+    <div class="page page--site-menu">
         <div class="page-section">
-            <h1>Menu</h1>
+            <input type="text">
+            <details>
+                <summary>Categories</summary>
+                <div>
+                    <ul>
+                        <?php
+                            $categories = get_categories();
+                            foreach ( $categories as $category ) {
+                                echo '<li><a href="' . esc_url( get_category_link( $category ) ) . '"></a>' . $category->name . '</li>';
+                            }
+                        ?>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>Series</summary>
+                <div>
+                    <ul>
+                        <a href="">The Magnolia Post Spotlight</a>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>The Magnolia Post</summary>
+                <div>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="videos">Videos</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Advertising</a></li>
+                    </ul>
+                </div>
+            </details>
         </div>
     </div>
 </div>

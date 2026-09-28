@@ -1,5 +1,5 @@
 <a href="<?php echo esc_attr( get_the_permalink() ); ?>">
-    <div class="card card--horizontal">
+    <div class="card card--row">
         <div class="card__img-container card__img-container--sm">
             <img class="card__img" src="<?php echo esc_attr( the_post_thumbnail_url() ); ?>" alt="">
         </div>

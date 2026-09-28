@@ -1,7 +1,6 @@
 <?php wp_footer(); ?>
 <footer class="footer">
     <div class="footer__body page-section flex flex--dt-row flex--mb-col">
-        <?php ob_start(); ?>
         <div>
             <div class="nav__logo-container">
                 <a href="/"><img class="nav__logo" src="https://themagnoliapost-com.local/wp-content/uploads/2026/09/full-logo.svg" alt="" class="logo__img" /></a>
