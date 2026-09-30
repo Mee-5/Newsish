@@ -11,20 +11,11 @@ $news_query_args = array(
 
 $news_query = new WP_Query( $news_query_args );
 
-$entertainment_query_args = array(
-    'post_type' => 'post',
-    'post_status' => 'publish',
-    'posts_per_page' => 6,
-    'category_name' => 'entertainment'
-);
-
-$entertainment_query = new WP_Query( $entertainment_query_args );
-
 ?>
 
 <main class="page">
     <div class="page-section grid grid--mb-col-1 grid--tb-col-2 grid--dt-col-3">
-        <div class="content-container content-container--no-pad">
+        <div class="content-container col-span-2">
             <?php newsish_post_loop( 'hero', $news_query, post_count: 1 ); ?>
         </div>
         <div class="content-container">
@@ -32,7 +23,7 @@ $entertainment_query = new WP_Query( $entertainment_query_args );
         </div>
     </div>
     <div class="page-section grid grid--mb-col-1 grid--tb-col-2 grid--dt-col-3">
-        <div class="content-container grid grid--dt-col-4 grid--tb-col-2 grid--mb-col-1">
+        <div class="content-container grid grid--dt-col-4 grid--tb-col-2 grid--mb-col-1 col-span-2">
             <?php newsish_post_loop( 'category', $news_query, post_count: 8 ); ?>
         </div>
         <div class="content-container content-container--no-pad">
@@ -43,16 +34,24 @@ $entertainment_query = new WP_Query( $entertainment_query_args );
     </div>
     <div class="page-section grid grid--dt-col-2 grid--mb-col-1">
         <div class="content-container">
-            <?php get_template_part( 'includes/components/post', 'grid-3', array( 'query' => $entertainment_query )); ?>
+            <?php get_template_part( 'includes/components/post', 'grid-3', array( 'category_name' => 'entertainment' ) ); ?>
         </div>
         <div class="content-container">
-            <?php get_template_part( 'includes/components/post', 'grid-3', array( 'query' => $entertainment_query )); ?>
+            <?php get_template_part( 'includes/components/post', 'grid-3', array( 'category_name' => 'lifestyle' ) ); ?>
         </div>
     </div>
-    <div class="page-section grid">
+    <div class="page-section grid grid--mb-col-1 grid--tb-col-2 grid--dt-col-3">
         <div><?php get_template_part( 'includes/components/post', 'img-list-headed', array( 'category_name' => 'public safety' ) ); ?></div>
         <div><?php get_template_part( 'includes/components/post', 'img-list-headed', array( 'category_name' => 'sports' ) ); ?></div>
         <div><?php get_template_part( 'includes/components/post', 'img-list-headed', array( 'category_name' => 'education' ) ); ?></div>
+    </div>
+    <div class="page-section grid grid--mb-col-1 grid--tb-col-2 grid--dt-col-3">
+        <div><?php get_template_part( 'includes/components/post', 'img-list-headed', array( 'category_name' => 'business' ) ); ?></div>
+        <div><?php get_template_part( 'includes/components/post', 'img-list-headed', array( 'category_name' => 'food' ) ); ?></div>
+        <div><?php get_template_part( 'includes/components/post', 'img-list-headed', array( 'category_name' => 'obituaries' ) ); ?></div>
+    </div>
+    <div class="page-section grid grid--mb-col-1 grid--tb-col-2 grid--dt-col-3">
+        <div><?php get_template_part( 'includes/components/post', 'img-list-headed', array( 'category_name' => 'community' ) ); ?></div>
     </div>
 </main>
 

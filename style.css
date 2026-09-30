@@ -57,7 +57,7 @@ Version: 1.0.0
 
 html {
     background-color: var(--background-color);
-    background-color: black;
+    background-color: #fff;
 }
 
 body {
@@ -80,7 +80,7 @@ hr {
 }
 
 main {
-    padding: 10px;
+    margin: 130px auto 0 auto;
 }
 
 main img {
@@ -142,6 +142,9 @@ main img {
 
 /* Tablet Layout */
 @media screen and (min-width: 600px) {
+    .col-span-2 {
+        grid-column: span 2;
+    }
 
     .flex--tb-col {
         flex-direction: column;
@@ -260,14 +263,13 @@ main img {
 
 .content-container {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
     background-color: #fff;
     gap: var(--gap);
 }
 
-.content-container--no-pad {
-    padding: 0;
+.content-container--rounded {
+    border-radius: var(--container-border-radius);
 }
 
 .container {
@@ -312,7 +314,9 @@ main img {
 }
 
 .article__img-container {
-
+    background-color: #000;
+    overflow: hidden;
+    border-radius: var(--container-border-radius);
 }
 
 .article__img {
@@ -348,7 +352,7 @@ main img {
 
 .card--category {
     flex-direction: row;
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 600px) {
         flex-direction: column;
     }
 }
@@ -366,7 +370,7 @@ main img {
 .card--hero {
     flex-direction: column;
     @media screen and (min-width: 600px) {
-        flex-direction: column-reverse;
+        flex-direction: row-reverse;
     }
     background-color: #f4f5f6;
     border-radius: var(--container-border-radius);
@@ -458,23 +462,17 @@ main img {
 
 /* Components */
 .component {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     overflow: hidden;
     gap: var(--gap-component);
     background-color: #fff;
 }
 
-.component--list-img {
-    display: flex;
-    flex-direction: column;
-}
-
 .component--title-list {
-    display: flex;
-    flex-direction: column;
-    background-color: #f4f5f6;
     border-radius: var(--container-border-radius);
-    padding-bottom: 10px;
+    gap: 0;
 }
 
 .component__header {
@@ -486,6 +484,10 @@ main img {
     padding-left: 10px;
     background-color: var(--accent-color);
     border-radius: var(--container-border-radius);
+}
+
+.component__header--title-list {
+    border-radius: 0;
 }
 
 .component__title {
@@ -500,8 +502,11 @@ main img {
     gap: var(--gap-component);
 }
 
-.component__body--text-only {
+.component__body--title-list {
     padding: 0 10px;
+    background-color: #f4f5f6;
+    border-radius: 0;
+    padding: 10px;
 }
 
 .title-list {
@@ -677,8 +682,7 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 65px auto 0 auto;
-    gap: var(--gap);
+    gap: var(--gap-section);
 }
 
 .page--site-menu {
@@ -688,7 +692,8 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
 
 .page-section {
     width: 100%;
-    gap: var(--gap);
+    padding: 0 15px 0 15px;
+    gap: var(--gap-section);
 }
 
 .page-section--grid-col-3 {
@@ -704,10 +709,6 @@ li:hover .menu__dropdown, .menu__dropdown:hover {
 .page-section__title {
     font-size: var(--text-md);
     font-weight: var(--weight-bold);
-}
-
-.col-span-2 {
-    grid-column: span 2;
 }
 
 /* Site menu */

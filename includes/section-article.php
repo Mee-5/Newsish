@@ -5,7 +5,13 @@
             <span>By <?php the_author(); ?></span><span><?php the_date(); ?></span>
         </div>
         <div class="article__img-container">
-            <img class="article__img" src="<?php echo esc_attr( get_the_post_thumbnail_url() ); ?>" alt="">
+            <?php
+                $youtube_url = get_post_meta( get_the_ID(), 'youtube_video_url', true);
+                if ( $youtube_url && $youtube_url != '' ):
+                    echo newsish_get_youtube_embed( newsish_get_youtube_id( $youtube_url ) ); 
+                else:?>
+                    <img class="article__img" src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>" alt="">
+            <?php endif; ?>
         </div>
     </div>
     <hr>
