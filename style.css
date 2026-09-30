@@ -15,11 +15,14 @@ Version: 1.0.0
 }
 
 :root {
+    --background-color: #f8fafc;
     --primary-border-color: #c4c4c4;
     --accent-color: #868570;
     --gap: 15px;
     --gap-row: 20px;
     --gap-col: 20px;
+    --gap-section: 20px;
+    --gap-component: 15px;
     --container-border-radius: 8px;
     --img-border-radius: 8px;
     --max-section-width: 1300px;
@@ -53,7 +56,8 @@ Version: 1.0.0
 }
 
 html {
-    background-color: #fff;
+    background-color: var(--background-color);
+    background-color: black;
 }
 
 body {
@@ -86,90 +90,13 @@ main img {
 
 .flex {
     display: flex;
-    gap: var(--gap-col);
+    gap: var(--gap-section);
 }
 
 .grid {
     display: grid;
     grid-auto-rows: auto;
-    gap: var(--gap-row);
-}
-
-/* Desktop Layout */
-@media screen and (min-width: 1024px) {
-
-    .flex--dt-col {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .flex--dt-row {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .grid--dt-col-1 {
-        grid-template-columns: 1fr;
-    }
-
-    .grid--dt-col-2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .grid--dt-col-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid--dt-col-4 {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .grid--dt-col-5 {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .grid--dt-col-6 {
-        grid-template-columns: repeat(6, 1fr);
-    }
-
-}
-
-/* Tablet Layout */
-@media screen and (min-width: 600px) {
-
-    .flex--tb-col {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .flex--tb-row {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .grid--tb-col-1 {
-        grid-template-columns: 1fr;
-    }
-
-    .grid--tb-col-2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .grid--tb-col-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid--tb-col-4 {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .grid--tb-col-5 {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .grid--tb-col-6 {
-        grid-template-columns: repeat(6, 1fr);
-    }
+    gap: var(--gap-section);
 }
 
 /* Mobile Layout */
@@ -213,18 +140,80 @@ main img {
     grid-template-columns: repeat(6, 1fr);
 }
 
-@media screen and (max-width: 1024px) {
+/* Tablet Layout */
+@media screen and (min-width: 600px) {
 
-    .menu--nav {
-        display: none;
+    .flex--tb-col {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .nav__logo-container {
-        width: 250px;
+    .flex--tb-row {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .grid--tb-col-1 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid--tb-col-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid--tb-col-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid--tb-col-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid--tb-col-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .grid--tb-col-6 {
+        grid-template-columns: repeat(6, 1fr);
     }
 }
 
-@media screen and (min-width: 1025px) {
+/* Desktop Layout */
+@media screen and (min-width: 1024px) {
+
+    .flex--dt-col {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flex--dt-row {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .grid--dt-col-1 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid--dt-col-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid--dt-col-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid--dt-col-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid--dt-col-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .grid--dt-col-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
 
 }
 
@@ -234,10 +223,9 @@ main img {
     }
 }
 
-@media screen and (max-width: 600px) {
-
-    .card__img-container--reponsive {
-        width: var(--img-sm); 
+@media screen and (min-width: 1024px) {
+    :root {
+        --max-section-width: 1300px;
     }
 }
 
@@ -251,6 +239,7 @@ main img {
 .footer {
     width: 100%;
     min-height: 300px;
+    background-color: #fff;
 }
 
 .footer__body {
@@ -274,8 +263,11 @@ main img {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    border-radius: var(--container-border-radius);
     gap: var(--gap);
+}
+
+.content-container--no-pad {
+    padding: 0;
 }
 
 .container {
@@ -365,7 +357,6 @@ main img {
     width: 100%;
     list-style: disc;
     list-style-position: inside;
-    padding: 10px 0;
 }
 
 .card--title-only::marker {
@@ -469,8 +460,13 @@ main img {
 .component {
     width: 100%;
     overflow: hidden;
-    gap: 0;
-    border-radius: var(--container-border-radius);
+    gap: var(--gap-component);
+    background-color: #fff;
+}
+
+.component--list-img {
+    display: flex;
+    flex-direction: column;
 }
 
 .component--title-list {
@@ -478,17 +474,16 @@ main img {
     flex-direction: column;
     background-color: #f4f5f6;
     border-radius: var(--container-border-radius);
-}
-
-.title-list {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    padding-bottom: 10px;
 }
 
 .component__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
+    padding-left: 10px;
     background-color: var(--accent-color);
     border-radius: var(--container-border-radius);
 }
@@ -502,12 +497,17 @@ main img {
 .component__body {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding-top: 20px;
+    gap: var(--gap-component);
 }
 
 .component__body--text-only {
-    padding: 10px;
+    padding: 0 10px;
+}
+
+.title-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-component);
 }
 
 .title-list li {
@@ -606,6 +606,22 @@ main img {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.menu--nav {
+    /* display: none; */
+}
+
+/* Remove this and add it to normal classes */
+@media screen and (max-width: 1024px) {
+
+    .menu--nav {
+        display: none;
+    }
+
+    .nav__logo-container {
+        width: 250px;
+    }
 }
 
 .menu--subnav {

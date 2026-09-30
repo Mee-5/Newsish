@@ -28,14 +28,14 @@ if ( $parsed_args[ 'custom_query' ] ) {
 
     while ($query->have_posts()) {
         $query->the_post();
-        get_template_part( 'includes/cards/post', $args[ 'template' ] );
+        get_template_part( 'includes/cards/post', $parsed_args[ 'template' ] );
     }
 
 } else {
 
     while (have_posts()) {
         the_post();
-        get_template_part( 'includes/cards/post', $args[ 'template' ] );
+        get_template_part( 'includes/cards/post', $parsed_args[ 'template' ] );
     }
 
 }

@@ -29,6 +29,7 @@
         <?php endif; ?>
     </div>
     <div class="component__body">
+        <?php newsish_post_loop( 'default', $query, post_count: 1); ?>
         <?php newsish_post_loop( 'default-row', $query); ?>
     </div>
 </div>
